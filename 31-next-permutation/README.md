@@ -45,3 +45,67 @@
 	<li><code>1 &lt;= nums.length &lt;= 100</code></li>
 	<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
+
+# Solution:
+# Next Permutation Algorithm
+
+## 🔹 Intuition
+We need to rearrange numbers into the **next lexicographically greater permutation**.  
+If no such permutation exists (i.e., the array is in descending order), we return the smallest permutation (sorted ascending).
+
+Think of permutations as numbers:
+- Example: `123 → 132 → 213 → 231 → 312 → 321`  
+We want to find the "next" number in this sequence.
+
+---
+
+## 🔹 Approach
+1. **Find the pivot (first decreasing element from the right):**
+   - Traverse from right to left.
+   - Find the first index `i` such that `nums[i] < nums[i+1]`.
+   - This is the "pivot" where the next permutation change happens.
+
+2. **If no pivot found:**
+   - The array is in descending order (largest permutation).
+   - Reverse the entire array to get the smallest permutation.
+
+3. **Find the element just larger than pivot:**
+   - Traverse from right to left again.
+   - Find the first element greater than `nums[pivot]`.
+   - Swap it with the pivot.
+
+4. **Reverse the suffix:**
+   - Reverse the part of the array after the pivot.
+   - This ensures the suffix is the smallest possible order.
+
+---
+
+## 🔹 Time & Space Complexity
+- **Time Complexity:**  
+  - Finding pivot → `O(n)`  
+  - Finding element to swap → `O(n)`  
+  - Reversing suffix → `O(n)`  
+  - **Overall:** `O(n)`
+
+- **Space Complexity:**  
+  - Only constant extra space for variables.  
+  - **Overall:** `O(1)`
+
+---
+
+## 🔹 Example Walkthrough
+### Input:nums = [1, 2, 3]
+
+### Steps:
+1. Find pivot:  
+   - From right, `2 < 3` → pivot = index `1`.
+
+2. Find element greater than pivot:  
+   - From right, `3 > 2` → swap `2` and `3`.  
+   - Array becomes `[1, 3, 2]`.
+
+3. Reverse suffix after pivot:  
+   - Reverse from index `2` to end.  
+   - `[1, 3, 2]` → `[1, 3, 2]` (already sorted).
+
+### Output:[1, 3, 2]
