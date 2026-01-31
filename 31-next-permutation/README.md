@@ -93,7 +93,7 @@ We want to find the "next" number in this sequence.
 
 ---
 
-## 🔹 Example Walkthrough
+## 🔹 Example Walkthrough:
 ### Input:nums = [1, 2, 3]
 
 ### Steps:
