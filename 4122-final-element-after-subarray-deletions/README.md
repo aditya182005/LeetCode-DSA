@@ -47,3 +47,29 @@
 	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
+
+# solution:
+
+# Intuition
+The problem only requires comparing the first and last elements of the array.  
+Instead of iterating through the entire array, we can directly return the maximum of these two boundary values.
+
+# Approach
+1. Access the first element `nums[0]`.
+2. Access the last element `nums[nums.length - 1]`.
+3. Return the maximum using `Math.max`.
+
+# Complexity
+- **Time complexity:**  
+  O(1) — only two accesses and one comparison.
+- **Space complexity:**  
+  O(1) — no extra space used.
+
+# Code
+```java
+class Solution {
+    public int finalElement(int[] nums) {
+        return Math.max(nums[0], nums[nums.length - 1]);
+    }
+}
+
