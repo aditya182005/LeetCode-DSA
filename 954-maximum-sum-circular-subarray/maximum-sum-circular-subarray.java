@@ -15,10 +15,8 @@ class Solution {
             totalSum+=nums[i];
         }
 
-        int sum=maxSum;
-        int circularSum=totalSum-minSum;
 
-        if(minSum==totalSum) return sum;
-        return Math.max(sum,circularSum);
+        if(maxSum<0) return maxSum;
+        return Math.max(maxSum,totalSum-minSum);
     }
 }
