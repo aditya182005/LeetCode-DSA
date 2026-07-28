@@ -10,6 +10,7 @@
  */
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
+        if(head==null) return null;
         ListNode temp=new ListNode(-1);
         temp.next=head;
         ListNode current=temp;
