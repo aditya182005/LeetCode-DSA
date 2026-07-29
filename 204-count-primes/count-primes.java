@@ -8,8 +8,9 @@ class Solution {
         for(int i=2;i<n;i++){
             if(prime[i]){
                 count++;
-                for(int j=i*2;j<n;j+=i){
-                    prime[j]=false;
+                if((long) i*i <n){
+                    for(int j=i*i;j<n;j+=i) prime[j]=false;
+
                 }
             }
         }
