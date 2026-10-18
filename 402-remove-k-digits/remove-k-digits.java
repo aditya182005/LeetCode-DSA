@@ -9,7 +9,6 @@ class Solution {
                 stack.pop();
                 k--;
             }
-            // if(!stack.isEmpty() && x == '0') continue;
             stack.push(x);
         }
         while(k>0 && !stack.isEmpty())
